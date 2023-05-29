@@ -1,0 +1,9 @@
+def analizar_log(archivo_log):
+    with open(archivo_log, 'r') as archivo:
+        lineas = archivo.readlines()
+        # Analizar las líneas del archivo de log y extraer la información relevante
+        # Puedes realizar cálculos de estadísticas, buscar errores, etc.
+
+# Ejemplo de uso
+archivo_log = 'archivo.log'
+analizar_log(archivo_log)
