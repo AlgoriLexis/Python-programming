@@ -1,0 +1,22 @@
+import requests
+from bs4 import BeautifulSoup
+
+def obtener_precio(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    precio = soup.find('span', {'class': 'price'}).text.strip()
+    return precio
+
+def rastrear_precios(url, precio_anterior):
+    precio_actual = obtener_precio(url)
+    if precio_actual != precio_anterior:
+        print('¡El precio ha cambiado!')
+        print('Precio anterior:', precio_anterior)
+        print('Precio actual:', precio_actual)
+        # Aquí puedes agregar la lógica para enviar una notificación al usuario
+
+# Ejemplo de uso
+url_producto = 'https://www.ejemplo.com/producto'
+precio_inicial = obtener_precio(url_producto)
+while True:
+    rastrear_precios(url_producto, precio_inicial)
