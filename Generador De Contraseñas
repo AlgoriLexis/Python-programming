@@ -1,0 +1,14 @@
+import random
+import string
+
+def generar_contrasena(longitud, caracteres):
+    contrasena = ''
+    for _ in range(longitud):
+        contrasena += random.choice(caracteres)
+    return contrasena
+
+# Ejemplo de uso
+longitud = 8
+caracteres = string.ascii_letters + string.digits + string.punctuation
+contrasena_generada = generar_contrasena(longitud, caracteres)
+print('Contraseña generada:', contrasena_generada)
