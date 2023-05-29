@@ -1,0 +1,21 @@
+import requests
+import csv
+from bs4 import BeautifulSoup
+
+def extraer_datos(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    datos = []
+    # Extraer datos del sitio web y agregarlos a la lista datos
+    return datos
+
+def guardar_datos_csv(datos):
+    with open('datos.csv', 'w', newline='') as archivo_csv:
+        writer = csv.writer(archivo_csv)
+        writer.writerow(['Campo1', 'Campo2', 'Campo3'])  # Agrega los nombres de los campos
+        writer.writerows(datos)
+
+# Ejemplo de uso
+url_sitio_web = 'https://www.ejemplo.com'
+datos_extraidos = extraer_datos(url_sitio_web)
+guardar_datos_csv(datos_extraidos)
