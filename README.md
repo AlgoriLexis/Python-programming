@@ -1,8 +1,6 @@
 
 <div align="center">
-    <img src="logo.png" width="450px" height="250px">
     <hr>
-    <img src="gif1.gif" width="700px" height="176px" autoplay>
     <p align="center">
     <div align="center">
     <img src="https://img.shields.io/badge/-Python-%230075a8?logo=python&logoColor=white&style=flat-square">
